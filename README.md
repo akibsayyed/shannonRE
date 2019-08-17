@@ -1,7 +1,13 @@
-Helpful scripts for various tasks performed during reverse engineering the Shannon Baseband with the goal to exploit the Samsung Galaxy S6.
-Specifically, this is the code release for [https://comsecuris.com/slides/recon2016-breaking_band.pdf](https://comsecuris.com/slides/recon2016-breaking_band.pdf)
+# ShannonRE (S10)
+Forked scripts from https://github.com/Comsecuris/shannonRE for various tasks performed during reverse engineering the Shannon Baseband with the goal to exploit the Samsung Galaxy S10.
 
-Please reach out to us for patches or future research in this direction!
+## Info
+Scripts updated for newer baseband models.
+
+* Tested using modem image extracted from `SM-G973F_1_20190805143240_265uq9o87q_fac.zip` (Android Pie, August 2019 Security patch)
+** modem.bin - `SHA256 2c1bab2f61bd827aa43a79f92fec8f245c6be22e4f08b433e27a150a457418c8`
+
+## Repo structure
 
 Structure of this repository:
 ```
@@ -32,3 +38,6 @@ Structure of this repository:
     ├── unpack_modem.py [Split up a modem image into its TOC parts (Boot, Main, etc)]
     └── writemem.py [Write memory to a modem address]
 ```
+
+## References
+* Breaking band presentation - [https://comsecuris.com/slides/recon2016-breaking_band.pdf](https://comsecuris.com/slides/recon2016-breaking_band.pdf)
