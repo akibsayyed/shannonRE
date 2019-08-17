@@ -3,6 +3,7 @@
 //
 // File: Samsung TOC Template
 // (C) Copyright 2015/2016 Comsecuris UG
+// (C) Copyright 2019 Digitalcold
 //--------------------------------------
 
 struct TOC_header
@@ -17,37 +18,33 @@ struct TOC_header
 
 struct BOOT_img (unsigned int size)
 {
-    unsigned int preamble[8];
-    unsigned int rev;
-    unsigned int date;
-    unsigned int size;
-    unsigned int unk;
-    char hash_magic[4];
-    char sha512[64];
-    char code[size-512-64-4-4*4-8*4];
+    char code[size-512-4*4];
+    unsigned int unk[4];
     char signature[512];
 };
 
 struct MAIN_img (unsigned int size)
 {
     char data[size];
-    unsigned int unk1;
-    char padding[12];
-    char signature[256];
 };
 
 SetForeColor( cRed);
 TOC_header toc_hdr;
 TOC_header boot_hdr;
 TOC_header main_hdr;
+TOC_header vss_hdr;
 TOC_header nv;
 TOC_header offset;
 
-FSeek(toc_hdr.size);
+FSeek(boot_hdr.start);
 SetForeColor(cBlue);
 BOOT_img boot(boot_hdr.size);
 
 FSeek(main_hdr.start);
 SetForeColor(cGreen);
 MAIN_img main(main_hdr.size);
+
+FSeek(vss_hdr.start);
+SetForeColor(cYellow);
+MAIN_img main(vss_hdr.size);
 
