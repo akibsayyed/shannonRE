@@ -43,12 +43,12 @@ def unpack_img(fmw, hdr, Type):
 	return img
 
 def main():
-	parser = argparse.ArgumentParser()
-	parser.add_argument("--unpack-all", action="store_true",
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--unpack-all", action="store_true",
                 help="Unpack all of the sections in the TOC file")
-	parser.add_argument("modem_image",
+        parser.add_argument("modem_image",
                 help="Path to the modem.bin image to extract")
-	args = parser.parse_args()
+        args = parser.parse_args()
 
         print("TOC Extractor v1.0")
 
