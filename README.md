@@ -1,4 +1,4 @@
-# ShannonRE (S10)
+# ShannonRE (S10, 2019)
 Forked scripts from https://github.com/Comsecuris/shannonRE for various tasks performed during reverse engineering the Shannon Baseband with the goal to exploit the Samsung Galaxy S10.
 
 ## Info
@@ -16,6 +16,7 @@ Structure of this repository:
 ├── android
 │   ├── collect-ramdump.sh [Collect ramdumps using cbd directly, requires root]
 │   └── download-dump.sh [Collect ramdumps using the menu, does not require root]
+├── ghidra [GHIDRA scripts for Shannon]
 ├── idapython
 │   ├── loader
 │   │   └── sam_modem_ramdump.py [IDA loader for the Shannon MAIN image]
